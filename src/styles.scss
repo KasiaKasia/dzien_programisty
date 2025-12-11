@@ -1,0 +1,47 @@
+@import "./app/scss/app.scss";
+@import "./app/scss/navbar.scss";
+@import "./app/scss/sidebar.scss";
+@import "./app/scss/dashboard.scss";
+@import "./app/scss/wrap.scss";
+:root {
+    --main-font-size: 20px;
+
+    --main-letter-spacing: 0.12;
+    --main-word-spacing: 0.16;
+    --main-line-height: 1.5;
+
+    --main-color: white;
+    --main-color-red: #ff0000;
+    --main-box-shadow__sidebar: -1px 4.45rem 3rem 20px rgba(0, 0, 0, 0.75);
+    --main-box-shadow__navbar: 0 2rem 6rem 10px rgba(0, 0, 0, 0.75);
+    --mat-sys-on-surface: none;
+    --mat-sys-surface-variant: none;
+    --mat-sys-surface: none;
+    --mat-button-protected-container-color: rgb(27, 66, 29);
+    --mdc-protected-button-container-background: rgba(76, 34, 143, 0.87);
+
+    --mdc-protected-button-container-color: none;
+    --mdc-protected-button-container-height: 44px;
+    --mat-sys-title-small-line-height: (var(--main-font-size) * var(--main-line-height));
+    --mat-sys-body-medium-line-height: (var(--main-font-size) * var(--main-line-height));
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-size: var(--main-font-size);
+    color: var(--main-color);
+    border-color: var(--main-color);
+    line-height: calc(var(--main-font-size) * var(--main-line-height));
+    letter-spacing: calc(var(--main-font-size) * var(--main-letter-spacing));
+    word-spacing: calc(var(--main-font-size) * var(--main-word-spacing));
+}
+
+body {
+    background-image: url("./assets/icons/background3.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    margin: 0;
+}
+
+

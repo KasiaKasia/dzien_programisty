@@ -1,0 +1,74 @@
+form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+form label {
+    margin: 0;
+}
+
+input[type="text"],
+input[type="number"] {
+    background: #f7ecec9e;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    outline: none;
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+    min-width: 200px;
+    color: white !important;
+}
+
+form input[type="text"]:hover,
+input[type="number"]:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+form input[type="text"]:focus,
+input[type="number"]:focus {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+form button,
+table button {
+    background: #f7ecec9e;
+    border: 1px solid #ccc;
+    padding: 8px 14px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+form button:hover,
+table button:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background: #f7ecec9e;
+    font-weight: 600;
+}
+
+table tr:hover td {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.12);
+}

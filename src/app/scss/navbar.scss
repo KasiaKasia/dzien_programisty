@@ -1,0 +1,86 @@
+@mixin border-bottom {
+    border-bottom-width: 1px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg, oklch(0.2 0 0) 0%, oklch(0.74 0.01 147.23) 100%);
+    border-bottom-style: solid;
+    box-shadow: var(--main-box-shadow__navbar);
+}
+
+.app {
+    .navbar {
+        @include border-bottom;
+        position: relative;
+        width: 100%;
+        .navbar__wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+
+            .navbar__wrapper-left {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+                .navbar__section {
+                    padding: 10px;
+                }
+            }
+            .navbar__wrapper-right {
+                display: flex;
+                gap: 5px;
+                .navbar__section {
+                    padding: 5px;
+                    .navbar__routerLink {
+                        display: inline-block;
+                        padding: 10px 20px;
+                        border-radius: 12px;
+                        text-decoration: none;
+                        font-weight: 600;
+                        font-size: 1rem;
+
+                        color: #fff;
+                        background: #1f453a; /* delikatny niebieski, możesz zmienić */
+
+                        border: 1px solid rgba(255, 255, 255, 0.3);
+
+                        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+                        transition:
+                            transform 0.25s cubic-bezier(0.22, 1.2, 0.36, 1),
+                            box-shadow 0.25s ease,
+                            background 0.25s ease;
+                    }
+
+                    .navbar__routerLink:hover {
+                        transform: translateY(-4px) scale(1.05);
+                        background: #3b7340; /* jaśniejszy na hover */
+                        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+                    }
+
+                    .navbar__routerLink:active {
+                        transform: scale(0.98);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 769px) {
+    .app {
+        .navbar {
+            position: static;
+
+            .navbar__wrapper {
+                flex-direction: column;
+
+                .navbar__wrapper-left,
+                .navbar__wrapper-right {
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

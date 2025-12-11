@@ -1,0 +1,42 @@
+.app {
+    .app__page {
+        .sidebar {
+            width: 15%;
+            position: sticky;
+            top: 80px;
+            box-shadow: var(--main-box-shadow__sidebar);
+ 
+            transition:
+                opacity 0.4s ease,
+                transform 0.4s ease;
+            transform: translateX(0);
+
+            .sidebar__section {
+                display: flex;
+                margin: 25px 0px;
+                padding: 15px;
+                word-break: break-all; 
+
+                .sidebar__routerLink {
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+            &--hidden {
+                opacity: 0;
+                width: 0%;
+                transform: translateX(-100%);
+            }
+        }
+    }
+}
+
+@media (max-width: 769px) {
+    .sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}

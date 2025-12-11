@@ -1,0 +1,24 @@
+.app {
+    .app__page {
+        .dashboard {
+            flex: 1;
+            padding: 80px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            .dashboard__error {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        overflow-x: auto;
+    }
+}

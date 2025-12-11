@@ -1,0 +1,52 @@
+<div class="container">
+
+  <div class="select-row">
+    <div class="select-wrapper">
+      <div class="text">Wybierz zespół:</div>
+      <select (change)="wybierzZespol($event)">
+        <option value="" selected disabled>Wybierz zespół</option>
+        @for ( team of teams(); track team.id ) {
+        <option [value]="team.name">{{team.name}}</option>
+        }
+      </select>
+    </div>
+
+    <div class="select-wrapper">
+      <div class="text">Wybierz zadanie:</div>
+        <select id="select-zadanie" (change)="wybierzZadanie($event)">
+            <option value="" selected disabled>Wybierz zadanie</option>
+
+            @for ( zad of zadania(); track zad.numer ) {
+                @if(!wykonywaneZadania().has(zad.numer)) {
+                    <option>{{zad.numer}}</option>
+                }
+            }
+        </select>
+
+    </div>
+  </div>
+</div>
+
+@if(wybraneZadanie() && selectedTeam) {
+<div class="question-container">
+
+  <h3 class="text">{{wybraneZadanie()?.pytanie}}</h3>
+  <div class="quiz-container">
+    @for ( odp of wybraneZadanie()?.odpowiedzi; track odp ) {
+    <button class="choice" [class.disabled]="blokadaKlikania()" [ngClass]="getAnswerClass(odp)"
+      (click)="sprawdzOdpowiedz(odp)">
+      {{odp}}
+      @if(clickedAnswer === odp){
+      <span [ngClass]="{
+          'poprawna': odp === wybraneZadanie()?.poprawna,
+          'niepoprawna': odp !== wybraneZadanie()?.poprawna,
+          
+        }">
+        {{ odp === wybraneZadanie()?.poprawna ? '✔️' : '❌' }}
+      </span>
+      }
+    </button>
+    }
+  </div>
+</div>
+}
