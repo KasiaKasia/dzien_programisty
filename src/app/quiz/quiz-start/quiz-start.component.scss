@@ -3,7 +3,7 @@
   margin-bottom: 55px;
 
   .text {
-    margin-bottom: 55px;    
+    margin-bottom: 55px;   
     font-size: 1.6rem;
     line-height: 1.4;
   }
@@ -45,9 +45,9 @@
       box-shadow 0.35s ease;
   }
 .choice.disabled {
-  pointer-events: none;  
-  opacity: 0.7;      
-  transform: none !important; 
+  pointer-events: none;    
+  opacity: 0.7;         
+  transform: none !important;  
   box-shadow: none !important;
 }
   .choice:hover { 
@@ -100,6 +100,7 @@ select {
   color: black;
   padding: 8px 14px;
   border-radius: 8px;
+    font-weight: 600;
   border: 1px solid #ccc;
   cursor: pointer;
   appearance: none;
@@ -111,8 +112,7 @@ select {
 select option {
   background-color: rgba(247, 236, 236, 0.32) !important;
   color: black !important;
-}
- 
+} 
 select option:hover {
   background-color: rgba(230, 220, 220, 0.9) !important;
 }
@@ -121,6 +121,9 @@ select:hover {
   background-color: rgba(247, 236, 236, 0.75);
 }
  
+
+ 
+
 @media (max-width: 420px) {
   .choice {
     min-width: 100px;

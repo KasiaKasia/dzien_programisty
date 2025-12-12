@@ -9,4 +9,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './quiz.component.scss'
 })
 export class QuizComponent {
+
 }

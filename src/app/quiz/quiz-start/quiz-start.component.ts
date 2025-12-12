@@ -19,9 +19,9 @@ interface Zadanie {
 export class QuizStartComponent {
 
   zadania = signal<Zadanie[]>([
-    { numer: 'Zadanie 1', pytanie: 'pytanie?', odpowiedzi: ['odpowiedzi 1', 'odpowiedzi 2', 'odpowiedzi'], poprawna: 'odpowiedzi 3' },
-    
-  ]);
+    { numer: 'Zadanie 1', pytanie: 'pytanie?', odpowiedzi: ['odpowiedzi 1', 'odpowiedzi 2', 'odpowiedzi 3'], poprawna: 'odpowiedzi 3' },
+ 
+]);
 
   wybraneZadanie = signal<Zadanie | null>(null);
 
@@ -34,7 +34,6 @@ export class QuizStartComponent {
     this.clickedAnswer = null;
     this.blokadaKlikania.set(false);
   }
-
 
   selectedTeam: string = '';
 
@@ -59,19 +58,19 @@ sprawdzOdpowiedz(odp: string) {
   if (!this.selectedTeam || this.blokadaKlikania()) return;
 
   this.clickedAnswer = odp;
- 
+
   if (odp === this.wybraneZadanie()?.poprawna) {
     this.teamService.addPoint(this.selectedTeam);
   }
- 
+
   this.blokadaKlikania.set(true);
- 
+
   if (this.wybraneZadanie()) {
     const kopia = new Set(this.wykonywaneZadania());
     kopia.add(this.wybraneZadanie()!.numer);
     this.wykonywaneZadania.set(kopia);
   }
- 
+
   const select = document.querySelector('#select-zadanie') as HTMLSelectElement;
   if (select) select.value = "";
 }

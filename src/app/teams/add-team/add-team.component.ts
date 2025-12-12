@@ -4,9 +4,9 @@ import { TeamService } from '../../team.service';
 
 
 export interface Team {
-  id: number;       
-  name: string;      
-  points: number;    
+  id: number;
+  name: string;
+  points: number;
 }
 
 @Component({
@@ -20,9 +20,9 @@ export class AddTeamComponent {
 
 
   newTeamName = '';
-editingTeamId: number | null = null;
-editedTeamName: string = '';
-editedTeamPoints: number = 0;   
+  editingTeamId: number | null = null;
+  editedTeamName: string = '';
+  editedTeamPoints: number = 0;
   constructor(private teamService: TeamService) { }
 
   addTeam() {
@@ -41,18 +41,18 @@ editedTeamPoints: number = 0;
     this.teamService.removeTeam(id);
   }
 
- startEdit(id: number, name: string, points: number) {
-  this.editingTeamId = id;
-  this.editedTeamName = name;
-  this.editedTeamPoints = points;  
-}
- saveEdit(id: number) {
-  this.teamService.updateTeamName(id, this.editedTeamName);
-  this.teamService.updatePoints(id, this.editedTeamPoints);  
-  this.editingTeamId = null;
-}
+  startEdit(id: number, name: string, points: number) {
+    this.editingTeamId = id;
+    this.editedTeamName = name;
+    this.editedTeamPoints = points;
+  }
+  saveEdit(id: number) {
+    this.teamService.updateTeamName(id, this.editedTeamName);
+    this.teamService.updatePoints(id, this.editedTeamPoints);
+    this.editingTeamId = null;
+  }
 
- cancelEdit() {
-  this.editingTeamId = null;
-}
+  cancelEdit() {
+    this.editingTeamId = null;
+  }
 }

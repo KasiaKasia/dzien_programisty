@@ -4,7 +4,7 @@
         <input id="team-name" type="text" [(ngModel)]="newTeamName" name="teamName" required>
         <button type="submit" style="color: black;">Dodaj zespół</button>
     </form>
- 
+
     @if(teams().length > 0) {
     <table>
         <thead>
@@ -18,45 +18,37 @@
         </thead>
         <tbody>
             @for (team of teams(); track team.id) {
-
             <tr>
                 <td>{{ team.id }}</td>
-
                 <td>
                     @if(editingTeamId !== team.id){
-                    <span>{{ team.name }}</span>
+                        <span>{{ team.name }}</span>
                     }
                     @if(editingTeamId === team.id){
-                    <input type="text" [(ngModel)]="editedTeamName">
+                        <input type="text" [(ngModel)]="editedTeamName">
                     }
                 </td>
-
                 <td>
                     @if(editingTeamId !== team.id){
-                    <span>{{ team.points }}</span>
+                        <span>{{ team.points }}</span>
                     }
                     @if(editingTeamId === team.id){
-                    <input type="number" [(ngModel)]="editedTeamPoints" min="0">
+                        <input type="number" [(ngModel)]="editedTeamPoints" min="0">
                     }
                 </td>
-
                 <td><button (click)="removeTeam(team.id)">Usuń</button></td>
-
                 <td>
                     @if(editingTeamId !== team.id){
-                    <button (click)="startEdit(team.id, team.name, team.points)">Edytuj</button>
+                        <button (click)="startEdit(team.id, team.name, team.points)">Edytuj</button>
                     }
                     @if(editingTeamId === team.id){
-                    <button (click)="saveEdit(team.id)">Zapisz</button>
-                    <button (click)="cancelEdit()">Anuluj</button>
+                        <button (click)="saveEdit(team.id)">Zapisz</button>
+                        <button (click)="cancelEdit()">Anuluj</button>
                     }
                 </td>
             </tr>
-
             }
         </tbody>
-
     </table>
     }
 </div>
- 
